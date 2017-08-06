@@ -1,3 +1,4 @@
+package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,9 +13,9 @@ import javax.servlet.http.HttpServletResponse;
  * Simple Hello servlet.
  */
 
-@WebServlet("/hello")
+@WebServlet("/example")
 // you can use also URL pattern <url-pattern>/test/*</url-pattern>
-public final class HelloServlet extends HttpServlet {
+public final class ExampleOfServlet extends HttpServlet {
 
     /**
      * Respond to a GET request for the content produced by

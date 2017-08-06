@@ -16,12 +16,12 @@
     <!--Use @WebServlet annotation-->
 
     <!--<servlet>-->
-        <!--<servlet-name>HelloServlet</servlet-name>-->
-        <!--<servlet-class>HelloServlet</servlet-class>-->
+        <!--<servlet-nservlets.HelloServletvlet</servlet-name>-->
+        <!--<servlet-clservlets.HelloServletvlet</servlet-class>-->
     <!--</servlet>-->
 
     <!--<servlet-mapping>-->
-        <!--<servlet-name>HelloServlet</servlet-name>-->
+        <!--<servlet-nservlets.HelloServletvlet</servlet-name>-->
         <!--<url-pattern>/hello</url-pattern>-->
     <!--</servlet-mapping>-->
 
