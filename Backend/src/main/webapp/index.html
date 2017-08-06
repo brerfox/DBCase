@@ -3,21 +3,28 @@
     <title>DBCase A1.2</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src='./js/jquery-example.js'></script>
 </head>
 <body>
 
-<form action="/api/auth" method="post">
-    <div class="container">
+<div class="alert alert-warning" id="db_info" role="alert">
+    <strong id="db_info_text">DATA BASE is not available now!!!</strong>
+</div>
+
+<hr>
+    <div class="container" id="login-form">
         <label><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="login" required>
+        <input type="text" placeholder="Enter Username" id="login-form-login" name="login" required>
 
         <label><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="password" required>
+        <input type="password" placeholder="Enter Password" id="login-form-password" name="password" required>
 
-        <button type="submit">Login</button>
+        <button id="login-form-button">Login</button>
     </div>
-</form>
 
+<ul class="list-group" id="data_box">
+</ul>
 
 </body>
 </html>

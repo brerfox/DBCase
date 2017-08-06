@@ -50,7 +50,7 @@ public class AuthenticationServlet extends HttpServlet {
                 session.setAttribute("authorized", "true");
             }
         } catch (DBException e) {
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            JSONResponse.dbConnFailed(response);
             e.printStackTrace();
         }
     }
