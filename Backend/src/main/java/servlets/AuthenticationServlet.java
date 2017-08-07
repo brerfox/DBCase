@@ -27,6 +27,11 @@ public class AuthenticationServlet extends HttpServlet {
 
         DBService dbService = new DBService();
 
+        if (!dbService.validateConnection()) {
+            JSONResponse.dbConnFailed(response);
+            return;
+        }
+
         HttpSession session = request.getSession();
 
         String login = request.getParameter("login");

@@ -106,7 +106,8 @@ public class DBService {
             Connection connection = DriverManager.getConnection(url.toString());
             return connection;
         } catch (Exception e) {
-            e.printStackTrace();
+//            e.printStackTrace();
+            System.out.println("DB fail to connect.");
         }
         return null;
     }

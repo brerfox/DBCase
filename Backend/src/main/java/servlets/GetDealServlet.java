@@ -33,13 +33,19 @@ public final class GetDealServlet extends HttpServlet {
 
         DBService dbService = new DBService();
 
-//        if user is not authenticated
-        if (!CaseUtils.checkAuth(request)) {
-            JSONResponse.unAuthResponse(response);
+        if (!dbService.validateConnection()) {
+            JSONResponse.dbConnFailed(response);
             return;
         }
 
         try {
+
+//        if user is not authenticated
+            if (!CaseUtils.checkAuth(request)) {
+                JSONResponse.unAuthResponse(response);
+                return;
+            }
+
             if (request.getParameterMap().containsKey("id")) {
                 Long deal_id = Long.valueOf(request.getParameter("id"));
                 JSONResponse.toJson(response, dbService.getDealById(deal_id));
