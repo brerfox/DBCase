@@ -20,16 +20,22 @@ public class PropertyService {
 
     static {
         properties = new Properties();
-        try (InputStream input = new FileInputStream(pathToFile)) {
-            properties.load(input);
+        properties.setProperty("dbDriver", "com.mysql.jdbc.Driver");
+        properties.setProperty("dbPath", "jdbc:mysql://192.168.99.100/");
+        properties.setProperty("dbName", "db_grad_cs_1917");
+        properties.setProperty("dbUser", "test-user");
+        properties.setProperty("dbPwd", "test-user");
 
-            System.out.println("Get Properties: ");
-            System.out.println(properties.stringPropertyNames());
-
-        } catch (IOException ex) {
-            System.out.println("Problem with property file !!!");
-            ex.printStackTrace();
-        }
+//        try (InputStream input = new FileInputStream(pathToFile)) {
+//            properties.load(input);
+//
+//            System.out.println("Get Properties: ");
+//            System.out.println(properties.stringPropertyNames());
+//
+//        } catch (IOException ex) {
+//            System.out.println("Problem with property file !!!");
+//            ex.printStackTrace();
+//        }
     }
 
     public Properties getProperties() {

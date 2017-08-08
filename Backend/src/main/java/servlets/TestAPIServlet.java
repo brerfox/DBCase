@@ -56,6 +56,8 @@ public class TestAPIServlet extends HttpServlet {
 
 
         info.put("Properties", propertyService.getProperties());
+        final String dir = System.getProperty("user.dir");
+        info.put("Working dir", dir);
         JSONResponse.toJson(response, info);
     }
 }

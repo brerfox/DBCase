@@ -9,7 +9,7 @@ $(document).ready( function() {
         var pass = $('#login-form-password').val();
 
         console.log(login, pass);
-        $.post('/api/auth', {login: login, password: pass}).done(function(data){
+        $.post(window.location.pathname + 'api/auth', {login: login, password: pass}).done(function(data){
             $('#login-form').html('<strong>You are authenticated!</strong>');
             afterAuth();
         }).fail(function(xhr, status, error) {
@@ -18,7 +18,7 @@ $(document).ready( function() {
     });
 
     function afterAuth() {
-        $.get('/api/get/deal', {page_id: 1, page_size: 100}, function(data){
+        $.get(window.location.pathname + 'api/get/deal', {page_id: 1, page_size: 100}, function(data){
             console.log(data);
             data.forEach(function(element) {
                 $('#data_box').append('<li class="list-group-item">Deal ID: ' + element.deal_id + ', Deal amount: ' + element.deal_amount + ', </li>')
@@ -27,7 +27,7 @@ $(document).ready( function() {
     }
 
     function dbCheck () {
-        $.get('/api/db_is_alive', {}, function(data){
+        $.get(window.location.pathname + '/api/db_is_alive', {}, function(data){
             console.log(data);
             if(data == true) {
                 $('#db_info').removeClass("alert-warning");
