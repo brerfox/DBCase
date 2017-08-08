@@ -24,7 +24,7 @@ public class DBService {
 //    Manual test
     public static void main(String[] args) {
 
-        DBService dbService = new DBService(new PropertyService());
+        DBService dbService = new DBService(PropertyService.getInstance());
         dbService.printConnectInfo();
 
         System.out.println(dbService.validateConnection());
@@ -35,7 +35,7 @@ public class DBService {
     }
 
     public DBService() {
-        this.connection = getMysqlConnection(new PropertyService());
+        this.connection = getMysqlConnection(PropertyService.getInstance());
     }
 
     public boolean validateUser(String login, String password) throws DBException  {

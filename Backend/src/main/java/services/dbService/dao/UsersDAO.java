@@ -18,7 +18,7 @@ public class UsersDAO {
 //    manual testing
     public static void main(String[] args) throws Exception {
 
-        PropertyService propertyService = new PropertyService();
+        PropertyService propertyService = PropertyService.getInstance();
         DBService dbService = new DBService(propertyService);
         UsersDAO usersDAO = new UsersDAO(dbService.getConnection());
 

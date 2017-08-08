@@ -25,7 +25,7 @@ public class DealDAO {
     //    manual testing
     public static void main(String[] args) throws Exception {
 
-        PropertyService propertyService = new PropertyService();
+        PropertyService propertyService = PropertyService.getInstance();
         DBService dbService = new DBService(propertyService);
         DealDAO dealDAO = new DealDAO(dbService.getConnection());
 

@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class PropertyService {
 
-//    manual testing
+    //    manual testing
     public static void main(String[] args) {
         final String dir = System.getProperty("user.dir");
         System.out.println("current dir = " + dir);
@@ -15,10 +15,9 @@ public class PropertyService {
         System.out.println(propertyService.getProperties());
     }
 
-    static private final Properties properties;
-    static private final String pathToFile = "./config/dbConnector.properties";
+    private static PropertyService instance = null;
 
-    static {
+    private PropertyService() {
         properties = new Properties();
         properties.setProperty("dbDriver", "com.mysql.jdbc.Driver");
         properties.setProperty("dbPath", "jdbc:mysql://192.168.99.100/");
@@ -26,17 +25,28 @@ public class PropertyService {
         properties.setProperty("dbUser", "test-user");
         properties.setProperty("dbPwd", "test-user");
 
-//        try (InputStream input = new FileInputStream(pathToFile)) {
-//            properties.load(input);
-//
-//            System.out.println("Get Properties: ");
-//            System.out.println(properties.stringPropertyNames());
-//
-//        } catch (IOException ex) {
-//            System.out.println("Problem with property file !!!");
-//            ex.printStackTrace();
-//        }
+        try (InputStream input = getClass().getClassLoader().getResourceAsStream(pathToFile)) {
+            properties.load(input);
+
+            System.out.println("Get Properties: ");
+            System.out.println(properties.stringPropertyNames());
+
+        } catch (IOException ex) {
+            System.out.println("Problem with property file !!!");
+            ex.printStackTrace();
+        }
     }
+
+    public static PropertyService getInstance() {
+        if(instance == null) {
+            instance = new PropertyService();
+        }
+        return instance;
+    }
+
+    static private Properties properties;
+    static private final String pathToFile = "dbConnector.properties";
+
 
     public Properties getProperties() {
         return properties;

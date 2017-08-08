@@ -35,7 +35,7 @@ public class TestAPIServlet extends HttpServlet {
             throws IOException, ServletException {
 
         Map<String, Object> info = new HashMap<>();
-        PropertyService propertyService = new PropertyService();
+        PropertyService propertyService = PropertyService.getInstance();
 
         DBService dbService = new DBService();
 
