@@ -3,6 +3,7 @@ package helpers;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 
 public class JSONResponse {
 
@@ -12,7 +13,7 @@ public class JSONResponse {
 
         response.setContentType("application/json");
         response.setStatus(HttpServletResponse.SC_OK);
-        response.getWriter().print(objectMapper
+        response.getWriter().print(objectMapper.writerWithDefaultPrettyPrinter()
                 .writeValueAsString(obj)
         );
         response.getWriter().flush();
