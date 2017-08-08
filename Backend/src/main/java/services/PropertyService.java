@@ -5,6 +5,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/*
+SINGLETON CLASS
+to get instance - getInstance()
+* */
 public class PropertyService {
 
     //    manual testing
