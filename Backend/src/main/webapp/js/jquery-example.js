@@ -27,7 +27,7 @@ $(document).ready( function() {
     }
 
     function dbCheck () {
-        $.get(window.location.pathname + '/api/db_is_alive', {}, function(data){
+        $.get(window.location.pathname + 'api/db_is_alive', {}, function(data){
             console.log(data);
             if(data == true) {
                 $('#db_info').removeClass("alert-warning");

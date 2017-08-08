@@ -33,6 +33,7 @@ public final class GetDealServlet extends HttpServlet {
 
         DBService dbService = new DBService();
 
+        //        db is not alive
         if (!dbService.validateConnection()) {
             JSONResponse.dbConnFailed(response);
             return;

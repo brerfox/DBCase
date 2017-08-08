@@ -3,8 +3,10 @@ package services.dbService;
 
 import services.PropertyService;
 import services.dbService.dao.DealDAO;
+import services.dbService.dao.InstrumentDAO;
 import services.dbService.dao.UsersDAO;
 import services.dbService.entities.Deal;
+import services.dbService.entities.Instrument;
 
 import java.sql.Connection;
 import java.sql.Driver;
@@ -57,6 +59,22 @@ public class DBService {
     public List<Deal> getAllDeals() throws DBException {
         try {
             return new DealDAO(connection).getAllDeals();
+        } catch (SQLException e) {
+            throw new DBException(e);
+        }
+    }
+
+    public List<Instrument> getAllInstruments() throws DBException {
+        try {
+            return new InstrumentDAO(connection).getAllInstruments();
+        } catch (SQLException e) {
+            throw new DBException(e);
+        }
+    }
+
+    public Instrument getInstrumentByID(long instrument_id) throws DBException {
+        try {
+            return new InstrumentDAO(connection).getInstrumentById(instrument_id);
         } catch (SQLException e) {
             throw new DBException(e);
         }
