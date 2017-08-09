@@ -5,6 +5,7 @@ import services.PropertyService;
 import services.dbService.executor.Executor;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class UsersDAO {
@@ -28,11 +29,13 @@ public class UsersDAO {
 
     public boolean validateUser(String login, String password) throws SQLException {
 
-        StringBuilder query = new StringBuilder();
-        query.append("SELECT EXISTS(SELECT * FROM users ");
-        query.append("WHERE user_id = '" + login + "' and user_pwd = '" + password + "')");
+        String query = "SELECT EXISTS(SELECT * FROM users " +
+                "WHERE user_id = ? AND user_pwd = ?)";
+        PreparedStatement stmt = executor.getPreparedStatement(query);
+        stmt.setString(1, login);
+        stmt.setString(2, password);
 
-        return executor.execQuery(query.toString(), result -> {
+        return executor.execQuerySafe(stmt, result -> {
                 result.next();
                 return result.getBoolean(1);
         });

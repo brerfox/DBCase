@@ -1,9 +1,6 @@
 package services.dbService.executor;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 
 public class Executor {
@@ -30,6 +27,21 @@ public class Executor {
         stmt.close();
 
         return value;
+    }
+
+//    Anti SQL injection version
+    public <T> T execQuerySafe(PreparedStatement stmt,
+                           ResultHandler<T> handler)
+            throws SQLException {
+        ResultSet result = stmt.executeQuery();
+        T value = handler.handle(result);
+        result.close();
+        stmt.close();
+        return value;
+    }
+
+    public PreparedStatement getPreparedStatement(String query) throws SQLException{
+        return connection.prepareStatement(query);
     }
 
 }
