@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 /*
-SINGLETON CLASS
+SINGLETON CLASS (I know that it's quite strange Singleton)
 to get instance - getInstance()
 * */
 public class PropertyService {
@@ -41,10 +41,12 @@ public class PropertyService {
         }
     }
 
+//    initialization (for multithreading) in advance
+//    it help avoid redundant coding
+    static {
+        instance = new PropertyService();
+    }
     public static PropertyService getInstance() {
-        if(instance == null) {
-            instance = new PropertyService();
-        }
         return instance;
     }
 
