@@ -108,4 +108,35 @@ public class Deal {
                 ", instrument_name='" + instrument_name + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Deal deal = (Deal) o;
+
+        if (deal_id != deal.deal_id) return false;
+        if (deal_quantity != deal.deal_quantity) return false;
+        if (deal_instrument_id != deal.deal_instrument_id) return false;
+        if (deal_time != null ? !deal_time.equals(deal.deal_time) : deal.deal_time != null) return false;
+        if (deal_type != null ? !deal_type.equals(deal.deal_type) : deal.deal_type != null) return false;
+        if (deal_amount != null ? !deal_amount.equals(deal.deal_amount) : deal.deal_amount != null) return false;
+        if (counterparty_name != null ? !counterparty_name.equals(deal.counterparty_name) : deal.counterparty_name != null)
+            return false;
+        return instrument_name != null ? instrument_name.equals(deal.instrument_name) : deal.instrument_name == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = (int) (deal_id ^ (deal_id >>> 32));
+        result = 31 * result + (deal_time != null ? deal_time.hashCode() : 0);
+        result = 31 * result + (deal_type != null ? deal_type.hashCode() : 0);
+        result = 31 * result + (deal_amount != null ? deal_amount.hashCode() : 0);
+        result = 31 * result + (int) (deal_quantity ^ (deal_quantity >>> 32));
+        result = 31 * result + (int) (deal_instrument_id ^ (deal_instrument_id >>> 32));
+        result = 31 * result + (counterparty_name != null ? counterparty_name.hashCode() : 0);
+        result = 31 * result + (instrument_name != null ? instrument_name.hashCode() : 0);
+        return result;
+    }
 }
