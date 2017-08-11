@@ -1,0 +1,21 @@
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.form-inline {
+    padding:5px;
+}
+.form-inline > * {
+    margin:5px 3px !important;
+}
+
+.form-control-inline {
+    min-width: 0;
+    width: 50px;
+    display: inline;
+}
