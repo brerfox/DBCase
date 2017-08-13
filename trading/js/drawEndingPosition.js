@@ -23,7 +23,8 @@ function drawEndingPosition(url, instrument, counterparty, divname) {
         x.title = "Instrument Name";
         myChart.addSeries("counterparty_name", dimple.plot.bar);
         myChart.lineMarkers = true;
-        var myLegend = myChart.addLegend("95%", "70%", 60, 200, "Right");
+        var myLegend = myChart.addLegend("90%", "5%", 120, 400, "Right");
+        myLegend.fontSize = "13px";
         myChart.draw();
 
         svg.append("text")
@@ -37,6 +38,60 @@ function drawEndingPosition(url, instrument, counterparty, divname) {
         svg.selectAll(".dimple-axis")
             .style("font-family", "sans-serif")
             .style("font-size", "15");
+
+        svg.selectAll("couterpartyclicklabel")
+            .data(["*Click Couterparty color box to show/hide counterparty"])
+            .enter()
+            .append("text")
+            .attr("x","80%")
+            .attr("y", "2%")
+            .style("font-size", "10px")
+            .style("font-style", "italic")
+            .text(function (d) { return d; });
+
+        myChart.legends = [];
+
+        var counterparyValues = dimple.getUniqueValues(data, "counterparty_name");
+
+        myLegend.shapes.selectAll("rect")
+        //Add a click event to each rectangle
+            .on("click", function (e)  {
+                //Is rectangle already visible?
+                var hideRect = false;
+                var newFilters = [];
+                //if filters contain clicked shape then hide it
+                counterparyValues.forEach(function (f) {
+                    if (f === e.aggField.slice(-1)[0]) {
+                        hideRect = true;
+                    } else {
+                        newFilters.push(f);
+                    }
+                });
+                // Either hide the shape or show it now
+                if (hideRect) {
+                    d3.select(this).style("opacity", 0.2);
+                } else {
+                    newFilters.push(e.aggField.slice(-1)[0]);
+                    d3.select(this).style("opacity", 0.8);
+                }
+                //Update our filters now
+                counterparyValues = newFilters;
+                if (counterparyValues.length > 0){
+                    myChart.data = dimple.filterData(data, "counterparty_name", counterparyValues);
+                    myChart.draw(1000);
+                } else {
+                    myChart.data = data;
+                    myChart.draw(1000);
+                }
+
+
+            });
+        d3.select('#button').on('click', function() {
+            myLegend.shapes.selectAll("rect").style("opacity", 0.8);
+            myChart.data = data;
+            myChart.draw(1000);
+
+        });
 
         function change() {
 

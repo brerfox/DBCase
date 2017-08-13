@@ -34,21 +34,21 @@ function drawAveragePrice(url, instrument, counterparty, divname) {
             predata = dimple.filterData(predata, "counterparty_name", counterparty)
         }
 
-        d3.select("#sort").on("change", change);
+        // d3.select("#sort").on("change", change);
 
         let data = preProcess(predata);
         let myChart = new dimple.chart(svg, data);
         myChart.setBounds("10%", "10%", "80%", "70%");
         var x = myChart.addCategoryAxis("x", ["instrument_name", "deal_type"]);
         var y = myChart.addMeasureAxis("y", "price");
-        //x.addOrderRule("instrument_name");
-        //x.addOrderRule("price");
+        x.addOrderRule("price");
         y.tickFormat = ',.3f';
         y.title = "Average Price";
         x.title = "Instrument Name / Deal Type";
         myChart.addSeries("deal_type", dimple.plot.bar);
         myChart.lineMarkers = true;
-        var myLegend = myChart.addLegend("95%", "90%", 60, 300, "Right");
+        var myLegend = myChart.addLegend("90%", "0%", 40, 400, "Right");
+        myLegend.fontSize = "13px";
         myChart.draw();
 
         svg.append("text")
@@ -64,7 +64,7 @@ function drawAveragePrice(url, instrument, counterparty, divname) {
             .style("font-size", "15");
 
         function change() {
-            x.addOrderRule("instrument_name");
+            x._orderRules.push({"price": false});
             myChart.draw(1500);
         }
 
