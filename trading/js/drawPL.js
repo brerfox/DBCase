@@ -1,4 +1,4 @@
-function drawRealizedPL(url, instrument, counterparty, divname) {
+function drawPL(url, instrument, counterparty, divname, type) {
     var svg = dimple.newSvg(divname, "100%", "600");
 
     d3.json(url, function (data) {
@@ -34,7 +34,7 @@ function drawRealizedPL(url, instrument, counterparty, divname) {
             .style("font-family", "sans-serif")
             .style("font-weight", "bold")
             .style("font-size", "20")
-            .text("Realized Profit/Loss for each Counterparty" );
+            .text(type + " Profit/Loss for each Counterparty" );
         svg.selectAll(".dimple-axis")
             .style("font-family", "sans-serif")
             .style("font-size", "15");
