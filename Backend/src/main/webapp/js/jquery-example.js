@@ -8,7 +8,7 @@ $(document).ready( function() {
         console.log(API_URL + 'api/logout');
         $.get(API_URL + 'api/logout', {}, function(data){
             console.log(API_URL + 'api/logout');
-            window.location.replace("/");
+            window.location.replace(API_URL);
         });
     });
 
