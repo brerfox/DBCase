@@ -1,4 +1,4 @@
-function drawEndingPosition(url, instrument, counterparty, divname) {
+function drawPL(url, instrument, counterparty, divname, type) {
     var svg = dimple.newSvg(divname, "100%", "600");
 
     d3.json(url, function (data) {
@@ -13,17 +13,17 @@ function drawEndingPosition(url, instrument, counterparty, divname) {
 
 
         let myChart = new dimple.chart(svg, data);
-        myChart.setBounds("10%", "10%", "80%", "70%");
-        var x = myChart.addCategoryAxis("x", "instrument_name");
-        var y = myChart.addMeasureAxis("y", "ending_position");
+        myChart.setBounds("12%", "10%", "80%", "70%");
+        var x = myChart.addCategoryAxis("x", "counterparty_name");
+        var y = myChart.addMeasureAxis("y", "difference");
         //x.addOrderRule("instrument_name");
-        x.addOrderRule("ending_position");
+        x.addOrderRule("counterparty_name");
         y.tickFormat = ',.3f';
-        y.title = "Ending Position";
+        y.title = "Realized P/L";
         x.title = "Instrument Name";
-        myChart.addSeries("counterparty_name", dimple.plot.bar);
+        myChart.addSeries("instrument_name", dimple.plot.bar);
         myChart.lineMarkers = true;
-        var myLegend = myChart.addLegend("90%", "5%", 120, 400, "Right");
+        var myLegend = myChart.addLegend("90%", "5%", 130, 400, "Right");
         myLegend.fontSize = "13px";
         myChart.draw();
 
@@ -34,13 +34,16 @@ function drawEndingPosition(url, instrument, counterparty, divname) {
             .style("font-family", "sans-serif")
             .style("font-weight", "bold")
             .style("font-size", "20")
-            .text("Ending Position for each Instrument" );
+            .text(type + " Profit/Loss for each Counterparty" );
         svg.selectAll(".dimple-axis")
             .style("font-family", "sans-serif")
             .style("font-size", "15");
 
-        svg.selectAll("couterpartyclicklabel")
-            .data(["*Click Couterparty color box to show/hide counterparty"])
+
+        myChart.legends = [];
+
+        svg.selectAll("instrumentclicklabel")
+            .data(["*Click Instrument color box to show/hide instrument"])
             .enter()
             .append("text")
             .attr("x","80%")
@@ -49,9 +52,7 @@ function drawEndingPosition(url, instrument, counterparty, divname) {
             .style("font-style", "italic")
             .text(function (d) { return d; });
 
-        myChart.legends = [];
-
-        var counterparyValues = dimple.getUniqueValues(data, "counterparty_name");
+        var instrumentValues = dimple.getUniqueValues(data, "instrument_name");
 
         myLegend.shapes.selectAll("rect")
         //Add a click event to each rectangle
@@ -60,7 +61,7 @@ function drawEndingPosition(url, instrument, counterparty, divname) {
                 var hideRect = false;
                 var newFilters = [];
                 //if filters contain clicked shape then hide it
-                counterparyValues.forEach(function (f) {
+                instrumentValues.forEach(function (f) {
                     if (f === e.aggField.slice(-1)[0]) {
                         hideRect = true;
                     } else {
@@ -75,9 +76,9 @@ function drawEndingPosition(url, instrument, counterparty, divname) {
                     d3.select(this).style("opacity", 0.8);
                 }
                 //Update our filters now
-                counterparyValues = newFilters;
-                if (counterparyValues.length > 0){
-                    myChart.data = dimple.filterData(data, "counterparty_name", counterparyValues);
+                instrumentValues = newFilters;
+                if (instrumentValues.length > 0){
+                    myChart.data = dimple.filterData(data, "instrument_name", instrumentValues);
                     myChart.draw(1000);
                 } else {
                     myChart.data = data;
@@ -93,12 +94,6 @@ function drawEndingPosition(url, instrument, counterparty, divname) {
 
         });
 
-        function change() {
-
-
-            console.log(x);
-            myChart.draw(1000);
-        }
 
     });
 }
