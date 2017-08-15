@@ -97,7 +97,7 @@
                         console.log("Check for overview: " + data);
                         if (data) {
 //                            let url = "data/data_part.json";
-                            let url = "api/get/deal?page_id=1&page_size=100";
+                            let url = "http://" + window.location.host + "/api/get/deal?page_id=1&page_size=300";
                             drawTrends(url, "All", "All", "#chartContainer");
                         } else {
                             window.location.replace("/");
