@@ -38,6 +38,10 @@ function drawAveragePrice(url, instrument, counterparty, divname) {
 
         let data = preProcess(predata);
         let myChart = new dimple.chart(svg, data);
+        myChart.defaultColors = [
+            new dimple.color("#3498db", "#2980b9", 1), // blue
+            new dimple.color("#e74c3c", "#c0392b", 1) // red
+        ];
         myChart.setBounds("10%", "10%", "80%", "70%");
         var x = myChart.addCategoryAxis("x", ["instrument_name", "deal_type"]);
         var y = myChart.addMeasureAxis("y", "price");

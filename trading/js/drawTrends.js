@@ -22,10 +22,9 @@ function drawTrends(url, instrument, counterparty, divname) {
 
     d3.json(url, function (data) {
 
-        var inFormat = d3.timeParse("%Y-%m-%dT%H:%M:%S.%L");
-        var altinFormat = d3.timeParse("%Y-%m-%dT%H:%M:%S");
-        var timeFormat = d3.timeFormat("%S");
-        var realFormat = d3.timeFormat("%S.%L");
+        //var inFormat = d3.timeParse("%Y-%m-%dT%H:%M:%S.%L");
+        let inFormat = d3.timeParse("%M:%S");
+        var timeFormat = d3.timeFormat("%M");
         var frame = 1000;
         var instrument = "All";
         var counterparty = "All";
@@ -40,20 +39,19 @@ function drawTrends(url, instrument, counterparty, divname) {
         }
 
         data.forEach(function (d) {
-            if (d["deal_type"] === "S"){
-                d["deal_amount"] = -d["deal_amount"]
-            }
-            d["total_amount"] =
-                d["deal_amount"] * d["deal_quantity"];
+            // if (d["deal_type"] === "S"){
+            //     d["deal_amount"] = -d["deal_amount"]
+            // }
+            // d["total_amount"] =
+            //     d["deal_amount"] * d["deal_quantity"];
 
-            var inDate = inFormat(d["deal_time"]);
+            var inDate = inFormat(d["TIMEONLY"]);
 
-            if (inDate === null){
-                inDate = altinFormat(d["deal_time"]);
-            }
+            // if (inDate === null){
+            //     inDate = altinFormat(d["deal_time"]);
+            // }
 
             d["Time"] = timeFormat(inDate);
-            d["Milli"] = realFormat(inDate);
 
         }, this);
 
@@ -61,11 +59,16 @@ function drawTrends(url, instrument, counterparty, divname) {
         var myChart = new dimple.chart(svg, data);
         myChart.setBounds("10%", "10%", "80%", "70%");
 
+        myChart.defaultColors = [
+            new dimple.color("#3498db", "#2980b9", 1), // blue
+            new dimple.color("#e74c3c", "#c0392b", 1) // red
+        ];
+
         // Add an x and 2 y-axes.  When using multiple axes it's
         // important to assign them to variables to pass to the series
-        var x = myChart.addCategoryAxis("x", ["Milli", "deal_time", "Time"]);
-        x.addGroupOrderRule("deal_time");
-        x.addOrderRule("deal_time");
+        var x = myChart.addCategoryAxis("x", ["TIMEONLY", "Time"]);
+        x.addGroupOrderRule("TIMEONLY");
+        x.addOrderRule("TIMEONLY");
 
         //x.hidden=true;
 
@@ -73,15 +76,15 @@ function drawTrends(url, instrument, counterparty, divname) {
 //                x.addOrderRule("deal_time", false);
 //                x.tickFormat = d3.timeFormat("%S");
         var y1 = myChart.addMeasureAxis("y", "total_amount");
-        var y2 = myChart.addMeasureAxis("y", "deal_quantity");
-        x.tickFormat = ',.0f';
+        var y2 = myChart.addMeasureAxis("y", "total_quantity");
+        //x.tickFormat = ',.0f';
         y1.tickFormat = ',.3f';
         y2.tickFormat = ',.3f';
         y1.title = "Total Amount";
         y2.title = "Total Quantity";
         x.title = "Time";
         // Color the sales bars to be highly transparent
-        myChart.assignColor("deal_amount", "#222222", "#000000", 0.1);
+        //myChart.assignColor("total_amount", "#222222", "#000000", 0.1);
 
         // Add the bars mapped to the second y axis
         var deal_amount = myChart.addSeries("Total Quantity", dimple.plot.bar, [x, y2]);
@@ -101,7 +104,7 @@ function drawTrends(url, instrument, counterparty, divname) {
         y2.shapes.selectAll("text").attr("fill", myChart.defaultColors[0].fill).style("opacity", 0.8);
         x.shapes.selectAll("text").style("text-anchor", "start")
             .attr("transform", "translate(0, 0)  rotate(0)" );
-        cleanAxis(x);
+        //cleanAxis(x);
 
 
         var titleText = svg.append("text")
