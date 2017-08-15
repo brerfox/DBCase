@@ -1,4 +1,7 @@
 function drawPL(url, instrument, counterparty, divname, type) {
+    //new line
+    d3.select("svg").remove();
+
     var svg = dimple.newSvg(divname, "100%", "600");
 
     d3.json(url, function (data) {

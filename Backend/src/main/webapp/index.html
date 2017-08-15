@@ -1,15 +1,38 @@
 <html>
 <head>
-    <title>DBCase A1.2</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="icon" href="assets/Deutsche_Bank_logo_without_wordmark.svg.png">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src='./js/jquery-example.js'></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="./assets/Deutsche_Bank_logo_without_wordmark.svg.png">
+
+    <title>Deutsche Bank Delivering Technology</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/navbar.css" rel="stylesheet">
+    <script src="./js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="./js/jquery.min.js"><\/script>')</script>
+    <script src="./js/tether.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/d3.v4.3.0.js"></script>
+    <script src="./js/dimple.js"></script>
+    <script src="./js/drawTrends.js"></script>
+    <script src="./js/drawAveragePrice.js"></script>
+    <script src="./js/drawEndingPosition.js"></script>
+    <script src="./js/drawPL.js"></script>
+    <script src="./js/jquery-example.js"></script>
+    <script src="./js/menu-events.js"></script>
+
 
     <style>
         body {
-            background-image: url("assets/db.png");
+            /*background-image: url("assets/db.png");*/
         }
         .imgcontainer {
             text-align: center;
@@ -44,6 +67,98 @@
 </head>
 <body>
 
+<div class="container" style="display: none" id="charts-container">
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Delivering Technology</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li  id="menu-overview" class="active">
+                        <a href="#">
+                        Overview
+                    </a>
+                    </li>
+                    <li id="menu-average-price">
+                        <a href="#">
+                            Average Price
+                        </a>
+                    </li>
+                    <li id="menu-ending-position">
+                        <a href="#">
+                            Ending Position
+                        </a>
+                    </li>
+                    <li id="menu-realized-pl">
+                        <a href="#">Realized P/L</a>
+                    </li>
+                    <li id="menu-effective-pl">
+                        <a href="#">Effective P/L</a>
+                    </li>
+                    <li>
+                        <a href="#" id="logout">Log out</a>
+                    </li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+    </nav>
+
+    <div class="row">
+        <div class="col-md-4 form-inline" id="selector1">
+            <h5>Choose one instrument</h5>
+            <select class="form-control" style="width:80%;" id="instrument">
+                <option value="All">All</option>
+                <option value="Astronomica">Astronomica</option>
+                <option value="Borealis">Borealis</option>
+                <option value="Celestial">Celestial</option>
+                <option value="Deuteronic">Deuteronic</option>
+                <option value="Eclipse">Eclipse</option>
+                <option value="Floral">Floral</option>
+                <option value="Galactia">Galactia</option>
+                <option value="Heliosphere">Heliosphere</option>
+                <option value="Interstella">Interstella</option>
+                <option value="Jupiter">Jupiter</option>
+                <option value="Koronis">Koronis</option>
+                <option value="Lunatic">Lunatic</option>
+            </select>
+        </div>
+        <div class="col-md-4 form-inline" id="selector2">
+            <h5>Choose one counterparty</h5>
+            <select class="form-control " style="width:80%;" id="counterparty">
+                <option value="All">All</option>
+                <option value="Lewis">Lewis</option>
+                <option value="Selvyn">Selvyn</option>
+                <option value="Richard">Richard</option>
+                <option value="Lina">Lina</option>
+                <option value="John">John</option>
+                <option value="Nidia">Nidia</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 jumbotron" id="chartContainer">
+
+        </div>
+    </div>
+</div>
+
+
+
+</div> <!-- /container -->
+
+
+<!--|||||||||||||||||||||||||||||||-->
+<div id="auth-form">
 <div class="alert alert-warning" id="db_info" role="alert">
     <strong id="db_info_text">DATA BASE is not available now!!!</strong>
 </div>
@@ -64,5 +179,6 @@
 <ul class="list-group" id="data_box">
 </ul>
 
+</div>
 </body>
 </html>
