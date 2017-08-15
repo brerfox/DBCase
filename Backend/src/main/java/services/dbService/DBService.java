@@ -16,9 +16,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
 
+
+
 public class DBService {
 
-    final Connection connection;
+    private final Connection connection;
 
     public Connection getConnection() {
         return connection;
