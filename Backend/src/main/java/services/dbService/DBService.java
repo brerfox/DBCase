@@ -12,8 +12,11 @@ import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
+
+
 
 public class DBService {
 
@@ -28,8 +31,15 @@ public class DBService {
 
         DBService dbService = new DBService(PropertyService.getInstance());
         dbService.printConnectInfo();
-
         System.out.println(dbService.validateConnection());
+        List<Deal> deal = new LinkedList<>();
+        try{
+            deal = dbService.getAllDeals();
+        }
+        catch(DBException e){}
+        for (Deal d : deal){
+            System.out.println(d.getDeal_time());
+        }
     }
 
     public DBService(PropertyService propertyService) {
