@@ -3,7 +3,7 @@ package services.dbService.entities;
 public class Deal {
 
 //    deal_id,deal_time,deal_type,deal_amount,deal_quantity,
-// deal_instrument_id,counterparty_name,instrument_name
+//    deal_instrument_id,counterparty_name,instrument_name
 
     private long deal_id;
     private String deal_time;
