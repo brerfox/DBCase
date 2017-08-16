@@ -36,7 +36,9 @@ $(document).ready( function() {
     function afterAuth() {
         $('#auth-form').hide();
         $('#charts-container').show();
-        console.log("I'm really here!")
+        $('#overview-filters').show();
+        console.log("I'm really here!");
+
     let url = API_URL + "api/get/deal?page_id=1&page_size=300";
     drawTrends(url, "All", "All", "#chartContainer");
 
