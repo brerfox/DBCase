@@ -44,6 +44,14 @@ public class DBService {
         }
     }
 
+    public List<Overview> getOverview() throws DBException{
+        try{
+            return new RequirementDAO(connection).getOverview();
+        } catch (SQLException e){
+            throw new DBException(e);
+        }
+    }
+
     public DBService(PropertyService propertyService) {
         this.connection = getMysqlConnection(propertyService);
     }

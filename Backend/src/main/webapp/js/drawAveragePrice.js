@@ -5,16 +5,16 @@ function preProcess(data){
     data.forEach(function(item) {
         let temp;
         temp = {};
-        temp["instrument_name"] = item["instrument_name"];
+        temp["instrumentName"] = item["instrumentName"];
         temp["deal_instrument_id"] = item["deal_instrument_id"];
         temp["deal_type"] = "buy";
-        temp["price"] = item["average_buy"];
+        temp["price"] = item["averageBuy"];
         result.bulks.push(temp);
         temp = {};
-        temp["instrument_name"] = item["instrument_name"];
+        temp["instrumentName"] = item["instrumentName"];
         temp["deal_instrument_id"] = item["deal_instrument_id"];
         temp["deal_type"] = "sell";
-        temp["price"] = item["average_sell"];
+        temp["price"] = item["averageSell"];
         result.bulks.push(temp);
     });
     return result.bulks;
@@ -30,11 +30,11 @@ function drawAveragePrice(url, instrument, counterparty, divname) {
     d3.json(url, function (predata) {
 
         if (instrument !== "All") {
-            predata = dimple.filterData(predata, "instrument_name", instrument)
+            predata = dimple.filterData(predata, "instrumentName", instrument)
         }
 
         if (counterparty !== "All") {
-            predata = dimple.filterData(predata, "counterparty_name", counterparty)
+            predata = dimple.filterData(predata, "counterpartyName", counterparty)
         }
 
         // d3.select("#sort").on("change", change);
@@ -42,7 +42,7 @@ function drawAveragePrice(url, instrument, counterparty, divname) {
         let data = preProcess(predata);
         let myChart = new dimple.chart(svg, data);
         myChart.setBounds("10%", "10%", "80%", "70%");
-        var x = myChart.addCategoryAxis("x", ["instrument_name", "deal_type"]);
+        var x = myChart.addCategoryAxis("x", ["instrumentName", "deal_type"]);
         var y = myChart.addMeasureAxis("y", "price");
         x.addOrderRule("price");
         y.tickFormat = ',.3f';

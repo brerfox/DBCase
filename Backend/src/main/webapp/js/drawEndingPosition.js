@@ -1,30 +1,41 @@
 function drawEndingPosition(url, instrument, counterparty, divname) {
-    //new line
+    // new line
     d3.select("svg").remove();
-
     var svg = dimple.newSvg(divname, "100%", "600");
 
     d3.json(url, function (data) {
 
         if (instrument !== "All") {
-            data = dimple.filterData(data, "instrument_name", instrument)
+            data = dimple.filterData(data, "instrumentName", instrument)
         }
 
         if (counterparty !== "All") {
-            data = dimple.filterData(data, "counterparty_name", counterparty)
+            data = dimple.filterData(data, "counterpartyName", counterparty)
         }
 
 
         let myChart = new dimple.chart(svg, data);
+        myChart.defaultColors = [
+            new dimple.color("#3498db", "#2980b9", 1), // blue
+            new dimple.color("#e74c3c", "#c0392b", 1), // red
+            new dimple.color("#2ecc71", "#27ae60", 1), // green
+            new dimple.color("#9b59b6", "#8e44ad", 1), // purple
+            new dimple.color("#e67e22", "#d35400", 1), // orange
+            new dimple.color("#f1c40f", "#f39c12", 1), // yellow
+            new dimple.color("#1abc9c", "#16a085", 1), // turquoise
+            new dimple.color("#95a5a6", "#7f8c8d", 1),
+            new dimple.color("#35a79c", "#009688", 1),
+            new dimple.color("#d7c6cf", "#a2798f", 1)
+        ];
         myChart.setBounds("10%", "10%", "80%", "70%");
-        var x = myChart.addCategoryAxis("x", "instrument_name");
-        var y = myChart.addMeasureAxis("y", "ending_position");
+        var x = myChart.addCategoryAxis("x", "instrumentName");
+        var y = myChart.addMeasureAxis("y", "endingPosition");
         //x.addOrderRule("instrument_name");
-        x.addOrderRule("ending_position");
+        x.addOrderRule("endingPosition");
         y.tickFormat = ',.3f';
         y.title = "Ending Position";
         x.title = "Instrument Name";
-        myChart.addSeries("counterparty_name", dimple.plot.bar);
+        myChart.addSeries("counterpartyName", dimple.plot.bar);
         myChart.lineMarkers = true;
         var myLegend = myChart.addLegend("90%", "5%", 120, 400, "Right");
         myLegend.fontSize = "13px";
@@ -54,7 +65,7 @@ function drawEndingPosition(url, instrument, counterparty, divname) {
 
         myChart.legends = [];
 
-        var counterparyValues = dimple.getUniqueValues(data, "counterparty_name");
+        var counterparyValues = dimple.getUniqueValues(data, "counterpartyName");
 
         myLegend.shapes.selectAll("rect")
         //Add a click event to each rectangle
@@ -80,7 +91,7 @@ function drawEndingPosition(url, instrument, counterparty, divname) {
                 //Update our filters now
                 counterparyValues = newFilters;
                 if (counterparyValues.length > 0){
-                    myChart.data = dimple.filterData(data, "counterparty_name", counterparyValues);
+                    myChart.data = dimple.filterData(data, "counterpartyName", counterparyValues);
                     myChart.draw(1000);
                 } else {
                     myChart.data = data;

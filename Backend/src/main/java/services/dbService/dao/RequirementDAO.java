@@ -26,12 +26,76 @@ public class RequirementDAO {
         requirementDAO.getEffectiveProfitLoss();
 
 	}
+    public List<Overview> getOverview() throws SQLException {
+        List<Overview> overviewList = new LinkedList<>();
+        String s = "select counterparty_name,instrument_name,deal_counterparty_id,deal_instrument_id,TIMEONLY,(total_buy_quantity * buy_amount - total_sell_quantity*sell_amount) as total_amount,(total_buy_quantity + total_sell_quantity) as total_quantity \n" +
+                "     from(\n" +
+                "       \n" +
+                "select counterparty_name,instrument_name,deal_counterparty_id,deal_instrument_id,TIMEONLY,\n" +
+                "      Sum(case when deal_type='B' then deal_quantity end) as total_buy_quantity,\n" +
+                "\t   Sum(case when deal_type='S' then deal_quantity end) as total_sell_quantity,\n" +
+                "\t   Sum(case when deal_type='B' then deal_amount end) as buy_amount,\n" +
+                "\t   Sum(case when deal_type='S' then deal_amount  end) as sell_amount\n" +
+                " from(\n" +
+                "SELECT counterparty_name,instrument_name,deal_counterparty_id,deal_instrument_id,deal_type,deal_quantity,deal_amount,DATE_FORMAT(deal_time,'%H:%i') TIMEONLY from deal\n" +
+                "JOIN counterparty\n" +
+                "        ON counterparty.counterparty_id = deal.deal_counterparty_id\n" +
+                "    JOIN instrument\n" +
+                "        ON instrument.instrument_id = deal.deal_instrument_id\n" +
+                "    )as t GROUP BY deal_counterparty_id,deal_instrument_id,TIMEONLY) as q;";
+        overviewList = this.executor.execQuery(s, (result) -> {
+            List<Overview> ol = new LinkedList<>();
+            while(result.next()) {
+                String instrument_name = result.getString(2);
+                String counterparty_name = result.getString(1);
+                String TIMEONLY = result.getString(5);
+                double total_amount = result.getDouble(6);
+                long total_quantity = result.getLong(7);
+                Overview o = new Overview(instrument_name, counterparty_name, TIMEONLY, total_amount, total_quantity);
+                ol.add(o);
+            }
+            return ol;
+        });
 
-	//requirement 1
+//        for(Overview e : overviewList){
+//
+//            System.out.println("counterparty name: "+e.getCounterparty_name()+", instrument name: "+e.getInstrument_name()+", TIMEONLY: "+e.getTIMEONLY()+ ", Total amount: "+e.getTotal_amount()+ ", Total Quantity: "+e.getTotal_quantity());
+//
+//
+//        }
+
+        return overviewList;
+    }
+
+
+    //requirement 1
     //TODO: change the query to remove the loop in java. Do this because otherwise what if we add more instruments??
     public List<AverageBuySell> getAverageBuyAndSell() throws SQLException {
         List<AverageBuySell> averagesList = new LinkedList();
 
+        String s = "SELECT instrument_name, deal_instrument_id,\n" +
+                "\tAVG(case when deal_type='B' then deal_amount end) as average_buy_amount,\n" +
+                "\tAVG(case when deal_type='S' then deal_amount end) as average_sell_amount\n" +
+                " FROM deal \n" +
+                " JOIN counterparty\n" +
+                "        ON counterparty.counterparty_id = deal.deal_counterparty_id\n" +
+                "    JOIN instrument\n" +
+                "        ON instrument.instrument_id = deal.deal_instrument_id\n" +
+                "group by deal_instrument_id;";
+
+        averagesList = this.executor.execQuery(s, result -> {
+            List<AverageBuySell> al = new LinkedList<>();
+            while(result.next()){
+                AverageBuySell a = new AverageBuySell(result.getString(1), result.getLong(2), result.getDouble(3), result.getDouble(4));
+                al.add(a);
+            }
+            return al;
+        });
+
+
+        return averagesList;
+
+        /*
         for(int i = 1001; i < 1013; ++i) {
             String getName = String.format("SELECT instrument_name from instrument where instrument_id = %d;", i);
             String s = (String)this.executor.execQuery(getName, (result) -> {
@@ -60,7 +124,7 @@ public class RequirementDAO {
             System.out.println("name: " + a.getInstrumentName() + ", id: " + a.getInstrumentId() + ", average buy: " + a.getAverageBuy() + ", average sell: " + a.getAverageSell());
         }
 
-        return averagesList;
+        return averagesList; */
     }
 
     //requirement 2

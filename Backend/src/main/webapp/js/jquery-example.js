@@ -39,8 +39,12 @@ $(document).ready( function() {
         $('#overview-filters').show();
         console.log("I'm really here!");
 
-    let url = API_URL + "api/get/deal?page_id=1&page_size=300";
-    drawTrends(url, "All", "All", "#chartContainer");
+        // let url = "data/overview.json";
+        let url = API_URL + "api/get/overview";
+        drawTrends(url, "All", "All", "#chartContainer");
+
+    // let url = API_URL + "api/get/deal?page_id=1&page_size=300";
+    // drawTrends(url, "All", "All", "#chartContainer");
 
     }
 
