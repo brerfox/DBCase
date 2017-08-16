@@ -33,4 +33,22 @@ public class Instrument {
                 ", instrument_name='" + instrument_name + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Instrument that = (Instrument) o;
+
+        if (instrument_id != that.instrument_id) return false;
+        return instrument_name != null ? instrument_name.equals(that.instrument_name) : that.instrument_name == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = (int) (instrument_id ^ (instrument_id >>> 32));
+        result = 31 * result + (instrument_name != null ? instrument_name.hashCode() : 0);
+        return result;
+    }
 }

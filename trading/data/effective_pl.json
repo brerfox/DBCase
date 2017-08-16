@@ -1,0 +1,289 @@
+[ {
+  "effective_profit" : 1.999243191E7,
+  "counterpartyName" : "Lewis",
+  "instrumentName" : "Astronomica"
+}, {
+  "effective_profit" : 2.8717517009999998E7,
+  "counterpartyName" : "Lewis",
+  "instrumentName" : "Borealis"
+}, {
+  "effective_profit" : 590138.46,
+  "counterpartyName" : "Lewis",
+  "instrumentName" : "Celestial"
+}, {
+  "effective_profit" : 9.360554924E7,
+  "counterpartyName" : "Lewis",
+  "instrumentName" : "Deuteronic"
+}, {
+  "effective_profit" : 2.2850992046E8,
+  "counterpartyName" : "Lewis",
+  "instrumentName" : "Eclipse"
+}, {
+  "effective_profit" : -393086.7199999988,
+  "counterpartyName" : "Lewis",
+  "instrumentName" : "Floral"
+}, {
+  "effective_profit" : 8.35383787E7,
+  "counterpartyName" : "Lewis",
+  "instrumentName" : "Galactia"
+}, {
+  "effective_profit" : 1.1513559425E8,
+  "counterpartyName" : "Lewis",
+  "instrumentName" : "Heliosphere"
+}, {
+  "effective_profit" : 3513874.89,
+  "counterpartyName" : "Lewis",
+  "instrumentName" : "Interstella"
+}, {
+  "effective_profit" : 1.9790670424E8,
+  "counterpartyName" : "Lewis",
+  "instrumentName" : "Jupiter"
+}, {
+  "effective_profit" : 2.246868625E7,
+  "counterpartyName" : "Lewis",
+  "instrumentName" : "Koronis"
+}, {
+  "effective_profit" : 8242989.0,
+  "counterpartyName" : "Lewis",
+  "instrumentName" : "Lunatic"
+}, {
+  "effective_profit" : 2.978715586E7,
+  "counterpartyName" : "Selvyn",
+  "instrumentName" : "Astronomica"
+}, {
+  "effective_profit" : 5.198341855E7,
+  "counterpartyName" : "Selvyn",
+  "instrumentName" : "Borealis"
+}, {
+  "effective_profit" : 4459416.38,
+  "counterpartyName" : "Selvyn",
+  "instrumentName" : "Celestial"
+}, {
+  "effective_profit" : 9.725336134E7,
+  "counterpartyName" : "Selvyn",
+  "instrumentName" : "Deuteronic"
+}, {
+  "effective_profit" : 3.120283522E7,
+  "counterpartyName" : "Selvyn",
+  "instrumentName" : "Eclipse"
+}, {
+  "effective_profit" : 2.400372536E7,
+  "counterpartyName" : "Selvyn",
+  "instrumentName" : "Floral"
+}, {
+  "effective_profit" : 8.08687643E7,
+  "counterpartyName" : "Selvyn",
+  "instrumentName" : "Galactia"
+}, {
+  "effective_profit" : 3.7535510225E8,
+  "counterpartyName" : "Selvyn",
+  "instrumentName" : "Heliosphere"
+}, {
+  "effective_profit" : 6860527.65,
+  "counterpartyName" : "Selvyn",
+  "instrumentName" : "Interstella"
+}, {
+  "effective_profit" : 1.3739266683999997E8,
+  "counterpartyName" : "Selvyn",
+  "instrumentName" : "Jupiter"
+}, {
+  "effective_profit" : 5.7267974949999996E7,
+  "counterpartyName" : "Selvyn",
+  "instrumentName" : "Koronis"
+}, {
+  "effective_profit" : 1732409.0,
+  "counterpartyName" : "Selvyn",
+  "instrumentName" : "Lunatic"
+}, {
+  "effective_profit" : 2.141933894E7,
+  "counterpartyName" : "Richard",
+  "instrumentName" : "Astronomica"
+}, {
+  "effective_profit" : 1.445885101E7,
+  "counterpartyName" : "Richard",
+  "instrumentName" : "Borealis"
+}, {
+  "effective_profit" : 5585208.779999999,
+  "counterpartyName" : "Richard",
+  "instrumentName" : "Celestial"
+}, {
+  "effective_profit" : 1.305801794E7,
+  "counterpartyName" : "Richard",
+  "instrumentName" : "Deuteronic"
+}, {
+  "effective_profit" : 5.993896078E7,
+  "counterpartyName" : "Richard",
+  "instrumentName" : "Eclipse"
+}, {
+  "effective_profit" : 1.2379289006E8,
+  "counterpartyName" : "Richard",
+  "instrumentName" : "Floral"
+}, {
+  "effective_profit" : 6959624.24,
+  "counterpartyName" : "Richard",
+  "instrumentName" : "Galactia"
+}, {
+  "effective_profit" : 1.829889775E7,
+  "counterpartyName" : "Richard",
+  "instrumentName" : "Heliosphere"
+}, {
+  "effective_profit" : 1.680250652E7,
+  "counterpartyName" : "Richard",
+  "instrumentName" : "Interstella"
+}, {
+  "effective_profit" : 1.28384104252E9,
+  "counterpartyName" : "Richard",
+  "instrumentName" : "Jupiter"
+}, {
+  "effective_profit" : 3803855.3,
+  "counterpartyName" : "Richard",
+  "instrumentName" : "Koronis"
+}, {
+  "effective_profit" : 7356002.0,
+  "counterpartyName" : "Richard",
+  "instrumentName" : "Lunatic"
+}, {
+  "effective_profit" : 9.623120505E7,
+  "counterpartyName" : "Lina",
+  "instrumentName" : "Astronomica"
+}, {
+  "effective_profit" : 7058945.82,
+  "counterpartyName" : "Lina",
+  "instrumentName" : "Borealis"
+}, {
+  "effective_profit" : -2992607.8600000003,
+  "counterpartyName" : "Lina",
+  "instrumentName" : "Celestial"
+}, {
+  "effective_profit" : 1.086909668E7,
+  "counterpartyName" : "Lina",
+  "instrumentName" : "Deuteronic"
+}, {
+  "effective_profit" : 8.829036432000001E7,
+  "counterpartyName" : "Lina",
+  "instrumentName" : "Eclipse"
+}, {
+  "effective_profit" : 7.862726103999999E7,
+  "counterpartyName" : "Lina",
+  "instrumentName" : "Floral"
+}, {
+  "effective_profit" : 7.179201246000001E7,
+  "counterpartyName" : "Lina",
+  "instrumentName" : "Galactia"
+}, {
+  "effective_profit" : 1.0939186825E8,
+  "counterpartyName" : "Lina",
+  "instrumentName" : "Heliosphere"
+}, {
+  "effective_profit" : -2734773.46,
+  "counterpartyName" : "Lina",
+  "instrumentName" : "Interstella"
+}, {
+  "effective_profit" : 6.7359836752E8,
+  "counterpartyName" : "Lina",
+  "instrumentName" : "Jupiter"
+}, {
+  "effective_profit" : 3.403900845E7,
+  "counterpartyName" : "Lina",
+  "instrumentName" : "Koronis"
+}, {
+  "effective_profit" : 1347728.0,
+  "counterpartyName" : "Lina",
+  "instrumentName" : "Lunatic"
+}, {
+  "effective_profit" : 2.3223625189999998E7,
+  "counterpartyName" : "John",
+  "instrumentName" : "Astronomica"
+}, {
+  "effective_profit" : 5.139292675E7,
+  "counterpartyName" : "John",
+  "instrumentName" : "Borealis"
+}, {
+  "effective_profit" : 2304726.26,
+  "counterpartyName" : "John",
+  "instrumentName" : "Celestial"
+}, {
+  "effective_profit" : 1.683735554E7,
+  "counterpartyName" : "John",
+  "instrumentName" : "Deuteronic"
+}, {
+  "effective_profit" : 7.266992828E7,
+  "counterpartyName" : "John",
+  "instrumentName" : "Eclipse"
+}, {
+  "effective_profit" : 3.63488485E7,
+  "counterpartyName" : "John",
+  "instrumentName" : "Floral"
+}, {
+  "effective_profit" : 8.40197022E7,
+  "counterpartyName" : "John",
+  "instrumentName" : "Galactia"
+}, {
+  "effective_profit" : 2.3937314675E8,
+  "counterpartyName" : "John",
+  "instrumentName" : "Heliosphere"
+}, {
+  "effective_profit" : 1.4050939370000001E7,
+  "counterpartyName" : "John",
+  "instrumentName" : "Interstella"
+}, {
+  "effective_profit" : 1.44550136908E9,
+  "counterpartyName" : "John",
+  "instrumentName" : "Jupiter"
+}, {
+  "effective_profit" : 1.9294535299999997E7,
+  "counterpartyName" : "John",
+  "instrumentName" : "Koronis"
+}, {
+  "effective_profit" : 1.5607679E7,
+  "counterpartyName" : "John",
+  "instrumentName" : "Lunatic"
+}, {
+  "effective_profit" : 9.724683087E7,
+  "counterpartyName" : "Nidia",
+  "instrumentName" : "Astronomica"
+}, {
+  "effective_profit" : 6.780942042E7,
+  "counterpartyName" : "Nidia",
+  "instrumentName" : "Borealis"
+}, {
+  "effective_profit" : 6459840.08,
+  "counterpartyName" : "Nidia",
+  "instrumentName" : "Celestial"
+}, {
+  "effective_profit" : 7.560422848E7,
+  "counterpartyName" : "Nidia",
+  "instrumentName" : "Deuteronic"
+}, {
+  "effective_profit" : 1.8254275964E8,
+  "counterpartyName" : "Nidia",
+  "instrumentName" : "Eclipse"
+}, {
+  "effective_profit" : -1.911543508E7,
+  "counterpartyName" : "Nidia",
+  "instrumentName" : "Floral"
+}, {
+  "effective_profit" : 4.003758332E7,
+  "counterpartyName" : "Nidia",
+  "instrumentName" : "Galactia"
+}, {
+  "effective_profit" : 3.761878775E7,
+  "counterpartyName" : "Nidia",
+  "instrumentName" : "Heliosphere"
+}, {
+  "effective_profit" : 9519003.41,
+  "counterpartyName" : "Nidia",
+  "instrumentName" : "Interstella"
+}, {
+  "effective_profit" : 9335076.75999999,
+  "counterpartyName" : "Nidia",
+  "instrumentName" : "Jupiter"
+}, {
+  "effective_profit" : 4.5162401199999996E7,
+  "counterpartyName" : "Nidia",
+  "instrumentName" : "Koronis"
+}, {
+  "effective_profit" : 2.074307E7,
+  "counterpartyName" : "Nidia",
+  "instrumentName" : "Lunatic"
+} ]

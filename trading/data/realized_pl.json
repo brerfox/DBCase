@@ -1,0 +1,506 @@
+[
+	{
+		"counterparty_name" : "Lewis",
+		"instrument_name" : "Astronomica",
+		"deal_counterparty_id" : 701,
+		"deal_instrument_id" : 1001,
+		"difference" : 7375798.449004
+	},
+	{
+		"counterparty_name" : "Lewis",
+		"instrument_name" : "Borealis",
+		"deal_counterparty_id" : 701,
+		"deal_instrument_id" : 1002,
+		"difference" : -4320633.660254
+	},
+	{
+		"counterparty_name" : "Lewis",
+		"instrument_name" : "Celestial",
+		"deal_counterparty_id" : 701,
+		"deal_instrument_id" : 1003,
+		"difference" : -1999755.968267
+	},
+	{
+		"counterparty_name" : "Lewis",
+		"instrument_name" : "Deuteronic",
+		"deal_counterparty_id" : 701,
+		"deal_instrument_id" : 1004,
+		"difference" : 8921763.170254
+	},
+	{
+		"counterparty_name" : "Lewis",
+		"instrument_name" : "Eclipse",
+		"deal_counterparty_id" : 701,
+		"deal_instrument_id" : 1005,
+		"difference" : 1011134.052406
+	},
+	{
+		"counterparty_name" : "Lewis",
+		"instrument_name" : "Floral",
+		"deal_counterparty_id" : 701,
+		"deal_instrument_id" : 1006,
+		"difference" : -22003592.643017
+	},
+	{
+		"counterparty_name" : "Lewis",
+		"instrument_name" : "Galactia",
+		"deal_counterparty_id" : 701,
+		"deal_instrument_id" : 1007,
+		"difference" : 32680518.005474
+	},
+	{
+		"counterparty_name" : "Lewis",
+		"instrument_name" : "Heliosphere",
+		"deal_counterparty_id" : 701,
+		"deal_instrument_id" : 1008,
+		"difference" : 50911056.020268
+	},
+	{
+		"counterparty_name" : "Lewis",
+		"instrument_name" : "Interstella",
+		"deal_counterparty_id" : 701,
+		"deal_instrument_id" : 1009,
+		"difference" : 1353317.716784
+	},
+	{
+		"counterparty_name" : "Lewis",
+		"instrument_name" : "Jupiter",
+		"deal_counterparty_id" : 701,
+		"deal_instrument_id" : 1010,
+		"difference" : 71563660.628280
+	},
+	{
+		"counterparty_name" : "Lewis",
+		"instrument_name" : "Koronis",
+		"deal_counterparty_id" : 701,
+		"deal_instrument_id" : 1011,
+		"difference" : 4744371.083810
+	},
+	{
+		"counterparty_name" : "Lewis",
+		"instrument_name" : "Lunatic",
+		"deal_counterparty_id" : 701,
+		"deal_instrument_id" : 1012,
+		"difference" : -2006011.125495
+	},
+	{
+		"counterparty_name" : "Selvyn",
+		"instrument_name" : "Astronomica",
+		"deal_counterparty_id" : 702,
+		"deal_instrument_id" : 1001,
+		"difference" : 10488357.355294
+	},
+	{
+		"counterparty_name" : "Selvyn",
+		"instrument_name" : "Borealis",
+		"deal_counterparty_id" : 702,
+		"deal_instrument_id" : 1002,
+		"difference" : 4226851.884578
+	},
+	{
+		"counterparty_name" : "Selvyn",
+		"instrument_name" : "Celestial",
+		"deal_counterparty_id" : 702,
+		"deal_instrument_id" : 1003,
+		"difference" : 750331.603083
+	},
+	{
+		"counterparty_name" : "Selvyn",
+		"instrument_name" : "Deuteronic",
+		"deal_counterparty_id" : 702,
+		"deal_instrument_id" : 1004,
+		"difference" : -8532011.743784
+	},
+	{
+		"counterparty_name" : "Selvyn",
+		"instrument_name" : "Eclipse",
+		"deal_counterparty_id" : 702,
+		"deal_instrument_id" : 1005,
+		"difference" : 18013978.300296
+	},
+	{
+		"counterparty_name" : "Selvyn",
+		"instrument_name" : "Floral",
+		"deal_counterparty_id" : 702,
+		"deal_instrument_id" : 1006,
+		"difference" : 9329559.008207
+	},
+	{
+		"counterparty_name" : "Selvyn",
+		"instrument_name" : "Galactia",
+		"deal_counterparty_id" : 702,
+		"deal_instrument_id" : 1007,
+		"difference" : -1437996.621076
+	},
+	{
+		"counterparty_name" : "Selvyn",
+		"instrument_name" : "Heliosphere",
+		"deal_counterparty_id" : 702,
+		"deal_instrument_id" : 1008,
+		"difference" : 66388679.322128
+	},
+	{
+		"counterparty_name" : "Selvyn",
+		"instrument_name" : "Interstella",
+		"deal_counterparty_id" : 702,
+		"deal_instrument_id" : 1009,
+		"difference" : 2313100.275574
+	},
+	{
+		"counterparty_name" : "Selvyn",
+		"instrument_name" : "Jupiter",
+		"deal_counterparty_id" : 702,
+		"deal_instrument_id" : 1010,
+		"difference" : -249143253.246045
+	},
+	{
+		"counterparty_name" : "Selvyn",
+		"instrument_name" : "Koronis",
+		"deal_counterparty_id" : 702,
+		"deal_instrument_id" : 1011,
+		"difference" : 5130679.881470
+	},
+	{
+		"counterparty_name" : "Selvyn",
+		"instrument_name" : "Lunatic",
+		"deal_counterparty_id" : 702,
+		"deal_instrument_id" : 1012,
+		"difference" : -1974991.804500
+	},
+	{
+		"counterparty_name" : "Richard",
+		"instrument_name" : "Astronomica",
+		"deal_counterparty_id" : 703,
+		"deal_instrument_id" : 1001,
+		"difference" : 18110637.962008
+	},
+	{
+		"counterparty_name" : "Richard",
+		"instrument_name" : "Borealis",
+		"deal_counterparty_id" : 703,
+		"deal_instrument_id" : 1002,
+		"difference" : 355825.438672
+	},
+	{
+		"counterparty_name" : "Richard",
+		"instrument_name" : "Celestial",
+		"deal_counterparty_id" : 703,
+		"deal_instrument_id" : 1003,
+		"difference" : 2630015.316462
+	},
+	{
+		"counterparty_name" : "Richard",
+		"instrument_name" : "Deuteronic",
+		"deal_counterparty_id" : 703,
+		"deal_instrument_id" : 1004,
+		"difference" : 3150143.156634
+	},
+	{
+		"counterparty_name" : "Richard",
+		"instrument_name" : "Eclipse",
+		"deal_counterparty_id" : 703,
+		"deal_instrument_id" : 1005,
+		"difference" : 8323606.261151
+	},
+	{
+		"counterparty_name" : "Richard",
+		"instrument_name" : "Floral",
+		"deal_counterparty_id" : 703,
+		"deal_instrument_id" : 1006,
+		"difference" : 1536206.892614
+	},
+	{
+		"counterparty_name" : "Richard",
+		"instrument_name" : "Galactia",
+		"deal_counterparty_id" : 703,
+		"deal_instrument_id" : 1007,
+		"difference" : 2909563.331062
+	},
+	{
+		"counterparty_name" : "Richard",
+		"instrument_name" : "Heliosphere",
+		"deal_counterparty_id" : 703,
+		"deal_instrument_id" : 1008,
+		"difference" : 14047437.231693
+	},
+	{
+		"counterparty_name" : "Richard",
+		"instrument_name" : "Interstella",
+		"deal_counterparty_id" : 703,
+		"deal_instrument_id" : 1009,
+		"difference" : 1857447.362199
+	},
+	{
+		"counterparty_name" : "Richard",
+		"instrument_name" : "Jupiter",
+		"deal_counterparty_id" : 703,
+		"deal_instrument_id" : 1010,
+		"difference" : 281684962.732240
+	},
+	{
+		"counterparty_name" : "Richard",
+		"instrument_name" : "Koronis",
+		"deal_counterparty_id" : 703,
+		"deal_instrument_id" : 1011,
+		"difference" : 2160880.916740
+	},
+	{
+		"counterparty_name" : "Richard",
+		"instrument_name" : "Lunatic",
+		"deal_counterparty_id" : 703,
+		"deal_instrument_id" : 1012,
+		"difference" : 4886622.230422
+	},
+	{
+		"counterparty_name" : "Lina",
+		"instrument_name" : "Astronomica",
+		"deal_counterparty_id" : 704,
+		"deal_instrument_id" : 1001,
+		"difference" : 7537976.196871
+	},
+	{
+		"counterparty_name" : "Lina",
+		"instrument_name" : "Borealis",
+		"deal_counterparty_id" : 704,
+		"deal_instrument_id" : 1002,
+		"difference" : -1993500.563315
+	},
+	{
+		"counterparty_name" : "Lina",
+		"instrument_name" : "Celestial",
+		"deal_counterparty_id" : 704,
+		"deal_instrument_id" : 1003,
+		"difference" : -3776839.674918
+	},
+	{
+		"counterparty_name" : "Lina",
+		"instrument_name" : "Deuteronic",
+		"deal_counterparty_id" : 704,
+		"deal_instrument_id" : 1004,
+		"difference" : 710457.330779
+	},
+	{
+		"counterparty_name" : "Lina",
+		"instrument_name" : "Eclipse",
+		"deal_counterparty_id" : 704,
+		"deal_instrument_id" : 1005,
+		"difference" : 16957728.285317
+	},
+	{
+		"counterparty_name" : "Lina",
+		"instrument_name" : "Floral",
+		"deal_counterparty_id" : 704,
+		"deal_instrument_id" : 1006,
+		"difference" : 20623240.335139
+	},
+	{
+		"counterparty_name" : "Lina",
+		"instrument_name" : "Galactia",
+		"deal_counterparty_id" : 704,
+		"deal_instrument_id" : 1007,
+		"difference" : 24694094.396833
+	},
+	{
+		"counterparty_name" : "Lina",
+		"instrument_name" : "Heliosphere",
+		"deal_counterparty_id" : 704,
+		"deal_instrument_id" : 1008,
+		"difference" : 48077075.902756
+	},
+	{
+		"counterparty_name" : "Lina",
+		"instrument_name" : "Interstella",
+		"deal_counterparty_id" : 704,
+		"deal_instrument_id" : 1009,
+		"difference" : -6815168.401526
+	},
+	{
+		"counterparty_name" : "Lina",
+		"instrument_name" : "Jupiter",
+		"deal_counterparty_id" : 704,
+		"deal_instrument_id" : 1010,
+		"difference" : 201052480.306765
+	},
+	{
+		"counterparty_name" : "Lina",
+		"instrument_name" : "Koronis",
+		"deal_counterparty_id" : 704,
+		"deal_instrument_id" : 1011,
+		"difference" : 4564543.577628
+	},
+	{
+		"counterparty_name" : "Lina",
+		"instrument_name" : "Lunatic",
+		"deal_counterparty_id" : 704,
+		"deal_instrument_id" : 1012,
+		"difference" : -1108332.930184
+	},
+	{
+		"counterparty_name" : "John",
+		"instrument_name" : "Astronomica",
+		"deal_counterparty_id" : 705,
+		"deal_instrument_id" : 1001,
+		"difference" : 13880369.020795
+	},
+	{
+		"counterparty_name" : "John",
+		"instrument_name" : "Borealis",
+		"deal_counterparty_id" : 705,
+		"deal_instrument_id" : 1002,
+		"difference" : 5966836.014545
+	},
+	{
+		"counterparty_name" : "John",
+		"instrument_name" : "Celestial",
+		"deal_counterparty_id" : 705,
+		"deal_instrument_id" : 1003,
+		"difference" : 364528.525777
+	},
+	{
+		"counterparty_name" : "John",
+		"instrument_name" : "Deuteronic",
+		"deal_counterparty_id" : 705,
+		"deal_instrument_id" : 1004,
+		"difference" : 8103273.350346
+	},
+	{
+		"counterparty_name" : "John",
+		"instrument_name" : "Eclipse",
+		"deal_counterparty_id" : 705,
+		"deal_instrument_id" : 1005,
+		"difference" : 6353618.582559
+	},
+	{
+		"counterparty_name" : "John",
+		"instrument_name" : "Floral",
+		"deal_counterparty_id" : 705,
+		"deal_instrument_id" : 1006,
+		"difference" : 8766759.875691
+	},
+	{
+		"counterparty_name" : "John",
+		"instrument_name" : "Galactia",
+		"deal_counterparty_id" : 705,
+		"deal_instrument_id" : 1007,
+		"difference" : 6325834.307509
+	},
+	{
+		"counterparty_name" : "John",
+		"instrument_name" : "Heliosphere",
+		"deal_counterparty_id" : 705,
+		"deal_instrument_id" : 1008,
+		"difference" : -27660618.888316
+	},
+	{
+		"counterparty_name" : "John",
+		"instrument_name" : "Interstella",
+		"deal_counterparty_id" : 705,
+		"deal_instrument_id" : 1009,
+		"difference" : 7001367.540428
+	},
+	{
+		"counterparty_name" : "John",
+		"instrument_name" : "Jupiter",
+		"deal_counterparty_id" : 705,
+		"deal_instrument_id" : 1010,
+		"difference" : -137730928.421653
+	},
+	{
+		"counterparty_name" : "John",
+		"instrument_name" : "Koronis",
+		"deal_counterparty_id" : 705,
+		"deal_instrument_id" : 1011,
+		"difference" : 2883961.458964
+	},
+	{
+		"counterparty_name" : "John",
+		"instrument_name" : "Lunatic",
+		"deal_counterparty_id" : 705,
+		"deal_instrument_id" : 1012,
+		"difference" : 1713439.725195
+	},
+	{
+		"counterparty_name" : "Nidia",
+		"instrument_name" : "Astronomica",
+		"deal_counterparty_id" : 706,
+		"deal_instrument_id" : 1001,
+		"difference" : 5692340.880873
+	},
+	{
+		"counterparty_name" : "Nidia",
+		"instrument_name" : "Borealis",
+		"deal_counterparty_id" : 706,
+		"deal_instrument_id" : 1002,
+		"difference" : 24965061.325645
+	},
+	{
+		"counterparty_name" : "Nidia",
+		"instrument_name" : "Celestial",
+		"deal_counterparty_id" : 706,
+		"deal_instrument_id" : 1003,
+		"difference" : 1679677.288441
+	},
+	{
+		"counterparty_name" : "Nidia",
+		"instrument_name" : "Deuteronic",
+		"deal_counterparty_id" : 706,
+		"deal_instrument_id" : 1004,
+		"difference" : -1460578.290765
+	},
+	{
+		"counterparty_name" : "Nidia",
+		"instrument_name" : "Eclipse",
+		"deal_counterparty_id" : 706,
+		"deal_instrument_id" : 1005,
+		"difference" : 60878852.802857
+	},
+	{
+		"counterparty_name" : "Nidia",
+		"instrument_name" : "Floral",
+		"deal_counterparty_id" : 706,
+		"deal_instrument_id" : 1006,
+		"difference" : -30009742.274405
+	},
+	{
+		"counterparty_name" : "Nidia",
+		"instrument_name" : "Galactia",
+		"deal_counterparty_id" : 706,
+		"deal_instrument_id" : 1007,
+		"difference" : 22549210.586398
+	},
+	{
+		"counterparty_name" : "Nidia",
+		"instrument_name" : "Heliosphere",
+		"deal_counterparty_id" : 706,
+		"deal_instrument_id" : 1008,
+		"difference" : -60520445.830331
+	},
+	{
+		"counterparty_name" : "Nidia",
+		"instrument_name" : "Interstella",
+		"deal_counterparty_id" : 706,
+		"deal_instrument_id" : 1009,
+		"difference" : -4450457.490724
+	},
+	{
+		"counterparty_name" : "Nidia",
+		"instrument_name" : "Jupiter",
+		"deal_counterparty_id" : 706,
+		"deal_instrument_id" : 1010,
+		"difference" : -317591864.514493
+	},
+	{
+		"counterparty_name" : "Nidia",
+		"instrument_name" : "Koronis",
+		"deal_counterparty_id" : 706,
+		"deal_instrument_id" : 1011,
+		"difference" : 5027775.393136
+	},
+	{
+		"counterparty_name" : "Nidia",
+		"instrument_name" : "Lunatic",
+		"deal_counterparty_id" : 706,
+		"deal_instrument_id" : 1012,
+		"difference" : 1876030.118522
+	}
+]

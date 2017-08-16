@@ -1,0 +1,86 @@
+[ {
+  "instrument_name" : "Astronomica",
+  "deal_instrument_id" : 1001,
+  "average_buy" : 4308.71,
+  "average_sell" : 4261.79
+  
+},
+{
+  "instrument_name" : "Borealis",
+  "deal_instrument_id" : 1002,
+  "average_buy" : 4371.77,
+  "average_sell" : 4332.29
+  
+},
+{
+  "instrument_name" : "Celestial",
+  "deal_instrument_id" : 1003,
+  "average_buy" : 522.12,
+  "average_sell" : 519.12
+  
+},
+
+{
+  "instrument_name" : "Deuteronic",
+  "deal_instrument_id" : 1004,
+  "average_buy" : 3951.19,
+  "average_sell" : 3900.89
+  
+},
+
+{
+  "instrument_name" : "Eclipse",
+  "deal_instrument_id" : 1005,
+  "average_buy" : 6706.01,
+  "average_sell" : 6619.38
+  
+},
+{
+  "instrument_name" : "Floral",
+  "deal_instrument_id" : 1006,
+  "average_buy" : 3834.75,
+  "average_sell" : 3803.98
+  
+},
+{
+  "instrument_name" : "Galactia",
+  "deal_instrument_id" : 1007,
+  "average_buy" : 6771.48,
+  "average_sell" : 6724.89
+  
+},
+{
+  "instrument_name" : "Heliosphere",
+  "deal_instrument_id" : 1008,
+  "average_buy" : 9815.25,
+  "average_sell" : 9678.69
+  
+},
+{
+  "instrument_name" : "Interstella",
+  "deal_instrument_id" : 1009,
+  "average_buy" : 840.635,
+  "average_sell" : 840.32
+  
+},
+{
+  "instrument_name" : "Jupiter",
+  "deal_instrument_id" : 1010,
+  "average_buy" : 42844.53,
+  "average_sell" : 42736.94
+  
+},
+{
+  "instrument_name" : "Koronis",
+  "deal_instrument_id" : 1011,
+  "average_buy" : 2354.49,
+  "average_sell" : 2324.69
+  
+},
+{
+  "instrument_name" : "Lunatic",
+  "deal_instrument_id" : 1012,
+  "average_buy" : 532.95,
+  "average_sell" : 528.88
+  
+}]
