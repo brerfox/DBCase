@@ -16,20 +16,20 @@ function drawPL(url, instrument, counterparty, divname, type, measurement, instr
 
 
         let myChart = new dimple.chart(svg, data);
-        // myChart.defaultColors = [
-        //     new dimple.color("#3498db", "#2980b9", 1), // blue
-        //     new dimple.color("#e74c3c", "#c0392b", 1), // red
-        //     new dimple.color("#2ecc71", "#27ae60", 1), // green
-        //     new dimple.color("#9b59b6", "#8e44ad", 1), // purple
-        //     new dimple.color("#e67e22", "#d35400", 1), // orange
-        //     new dimple.color("#f1c40f", "#f39c12", 1), // yellow
-        //     new dimple.color("#1abc9c", "#16a085", 1), // turquoise
-        //     new dimple.color("#95a5a6", "#7f8c8d", 1),
-        //     new dimple.color("#ffcd94", "#ffad60", 1),
-        //     new dimple.color("#f4a3b7", "#f490a9", 1),
-        //     new dimple.color("#d7c6cf", "#a2798f", 1),
-        //     new dimple.color("#d7c6cf", "#a2798f", 1)
-        // ];
+         myChart.defaultColors = [
+             new dimple.color("#003399", "#0068ae", 1),
+             new dimple.color("#009ee0", "#6d9fbd", 1),
+             new dimple.color("#667292", "#8d9db6", 1),
+             new dimple.color("#fdab18", "#fdd686", 1),
+             new dimple.color("#cb501b", "#e5a7bd", 1),
+             new dimple.color("#d7cb89", "#ebe6ca", 1),
+             new dimple.color("#52397a", "#ab9cbc", 1),
+             new dimple.color("#772379", "#bb91bc", 1),
+             new dimple.color("#b1be2d", "#d8de96", 1),
+             new dimple.color("#007a9e", "#7fbcce", 1),
+             new dimple.color("#b9936c", "#dac292", 1),
+             new dimple.color("#f7786b", "#f7cac9", 1)
+         ];
         myChart.setBounds("12%", "10%", "80%", "70%");
         var x = myChart.addCategoryAxis("x", counterparty_name);
         var y = myChart.addMeasureAxis("y", measurement);
@@ -38,7 +38,7 @@ function drawPL(url, instrument, counterparty, divname, type, measurement, instr
         x.addOrderRule(instrument_name, false);
         y.tickFormat = ',.3f';
         y.title = "Realized P/L";
-        x.title = "Instrument Name";
+        x.title = "Counterparty Name";
         myChart.addSeries(instrument_name, dimple.plot.bar);
         myChart.lineMarkers = true;
         var myLegend = myChart.addLegend("90%", "5%", 130, 400, "Right");

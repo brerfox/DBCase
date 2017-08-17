@@ -63,8 +63,18 @@ function drawTrends(url, instrument, counterparty, divname) {
         myChart.setBounds("10%", "10%", "80%", "70%");
 
         myChart.defaultColors = [
-            new dimple.color("#3498db", "#2980b9", 1), // blue
-            new dimple.color("#e74c3c", "#c0392b", 1) // red
+            new dimple.color("#003399", "#0068ae", 1),
+            new dimple.color("#009ee0", "#6d9fbd", 1),
+            new dimple.color("#667292", "#8d9db6", 1),
+            new dimple.color("#fdab18", "#fdd686", 1),
+            new dimple.color("#cb501b", "#e5a7bd", 1),
+            new dimple.color("#d7cb89", "#ebe6ca", 1),
+            new dimple.color("#52397a", "#ab9cbc", 1),
+            new dimple.color("#772379", "#bb91bc", 1),
+            new dimple.color("#b1be2d", "#d8de96", 1),
+            new dimple.color("#007a9e", "#7fbcce", 1),
+            new dimple.color("#b9936c", "#dac292", 1),
+            new dimple.color("#f7786b", "#f7cac9", 1)
         ];
 
         // Add an x and 2 y-axes.  When using multiple axes it's
@@ -81,8 +91,8 @@ function drawTrends(url, instrument, counterparty, divname) {
         var y1 = myChart.addMeasureAxis("y", "total_amount");
         var y2 = myChart.addMeasureAxis("y", "total_quantity");
         //x.tickFormat = ',.0f';
-        y1.tickFormat = ',.3f';
-        y2.tickFormat = ',.3f';
+        y1.tickFormat = ',.0f';
+        y2.tickFormat = ',.0f';
         y1.title = "Total Amount";
         y2.title = "Total Quantity";
         x.title = "Time";
