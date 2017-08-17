@@ -16,6 +16,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import services.PropertyService;
+import services.dbService.DBException;
+import services.dbService.DBService;
 import services.dbService.entities.Deal;
 import services.dbService.entities.Instrument;
 

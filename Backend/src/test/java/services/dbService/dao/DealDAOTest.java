@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package services.dbService.dao;
+package java.services.dbService.dao;
 
 import com.mysql.cj.api.exceptions.DeadlockTimeoutRollbackMarker;
 import org.junit.After;
