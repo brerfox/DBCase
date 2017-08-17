@@ -12,6 +12,21 @@ $(document).ready( function() {
         });
     });
 
+    $('#login-form').on('keydown', function(e) {
+        if (e.which == 13) {
+            var login = $('#login-form-login').val();
+            var pass = $('#login-form-password').val();
+
+            console.log(login, pass);
+            $.post(API_URL + 'api/auth', {login: login, password: pass}).done(function(data){
+                $('#login-form').html('<strong>You are authenticated!</strong>');
+                afterAuth();
+            }).fail(function(xhr, status, error) {
+                alert("Incorrect login and password!");
+            });
+        }
+    });
+
     $(document).on('click', '#login-form-button', function() {
 
         var login = $('#login-form-login').val();
@@ -25,6 +40,8 @@ $(document).ready( function() {
             alert("Incorrect login and password!");
         });
     });
+
+
 
     function checkAuth() {
         $.get(API_URL + 'api/auth', {}, function(data){
