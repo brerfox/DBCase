@@ -4,9 +4,9 @@ package services.dbService;
 import services.PropertyService;
 import services.dbService.dao.DealDAO;
 import services.dbService.dao.InstrumentDAO;
+import services.dbService.dao.RequirementDAO;
 import services.dbService.dao.UsersDAO;
-import services.dbService.entities.Deal;
-import services.dbService.entities.Instrument;
+import services.dbService.entities.*;
 
 import java.sql.Connection;
 import java.sql.Driver;
@@ -39,6 +39,14 @@ public class DBService {
         catch(DBException e){}
         for (Deal d : deal){
             System.out.println(d.getDeal_time());
+        }
+    }
+
+    public List<Overview> getOverview() throws DBException{
+        try{
+            return new RequirementDAO(connection).getOverview();
+        } catch (SQLException e){
+            throw new DBException(e);
         }
     }
 
@@ -78,6 +86,38 @@ public class DBService {
         try {
             return new InstrumentDAO(connection).getAllInstruments();
         } catch (SQLException e) {
+            throw new DBException(e);
+        }
+    }
+
+    public List<AverageBuySell> getAverageBuySell() throws DBException{
+        try{
+            return new RequirementDAO(connection).getAverageBuyAndSell();
+        } catch (SQLException e){
+            throw new DBException(e);
+        }
+    }
+
+    public List<EndingPosition> getEndingPosition() throws DBException{
+        try{
+            return new RequirementDAO(connection).getEndingPostions();
+        } catch (SQLException e){
+            throw new DBException(e);
+        }
+    }
+
+    public List<RealizedProfitLoss> getRealizedProfitLoss() throws DBException{
+        try{
+            return new RequirementDAO(connection).getRealizedProfitLoss();
+        } catch (SQLException e){
+            throw new DBException(e);
+        }
+    }
+
+    public List<EffectiveProfitLoss> getEffectiveProfitLoss() throws DBException{
+        try{
+            return new RequirementDAO(connection).getEffectiveProfitLoss();
+        } catch (SQLException e){
             throw new DBException(e);
         }
     }

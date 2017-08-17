@@ -1,0 +1,57 @@
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.navbar-default {
+    background-color: #003399;
+    border-color: #000640;
+}
+
+/* Title */
+.navbar-default .navbar-brand {
+    color: #ffffff;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #fbffe7;
+    background-color: #696de7;
+}
+
+/* Link */
+.navbar-default .navbar-nav > li > a {
+    color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #ffffff;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #f7f3ff;
+    background-color: #696de7;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: rgba(61, 66, 180, 0.72);
+    background-color: #ffffff;
+}
+
+.form-inline {
+    padding:5px;
+}
+.form-inline > * {
+    margin:5px 3px !important;
+}
+
+.form-control-inline {
+    min-width: 0;
+    width: 50px;
+    display: inline;
+}

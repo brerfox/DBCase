@@ -23,7 +23,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/d3.v4.3.0.js"></script>
     <script src="js/dimple.js"></script>
-    <script src="js/drawEndingPosition.js"></script>
+    <script src="js/drawPL.js"></script>
 </head>
 <body>
 
@@ -55,7 +55,11 @@
 
     <div class="row" style="padding-top: 10px;">
         <div class="col-md-12 jumbotron" id="chartContainer">
-
+            <script type="text/javascript">
+                // TODO: change to effective pl data
+                let url = "data/effective_pl.json";
+                drawPL(url, "All", "All", "#chartContainer", "Effective", "effective_profit", "instrumentName", "counterpartyName");
+            </script>
         </div>
     </div>
 </div>

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package services.dbService.dao;
+package java.services.dbService.dao;
 
 import com.mysql.cj.api.exceptions.DeadlockTimeoutRollbackMarker;
 import org.junit.After;
@@ -28,22 +28,22 @@ import java.util.List;
  * @author Graduate
  */
 public class DealDAOTest{
-    
+
     public DealDAOTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -53,6 +53,6 @@ public class DealDAOTest{
     //
     // @Test
     // public void hello() {}
-    
-    
+
+
 }

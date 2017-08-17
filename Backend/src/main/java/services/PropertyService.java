@@ -23,11 +23,6 @@ public class PropertyService {
 
     private PropertyService() {
         properties = new Properties();
-        properties.setProperty("dbDriver", "com.mysql.jdbc.Driver");
-        properties.setProperty("dbPath", "jdbc:mysql://192.168.99.100/");
-        properties.setProperty("dbName", "db_grad_cs_1917");
-        properties.setProperty("dbUser", "test-user");
-        properties.setProperty("dbPwd", "test-user");
 
         try (InputStream input = getClass().getClassLoader().getResourceAsStream(pathToFile)) {
             properties.load(input);
