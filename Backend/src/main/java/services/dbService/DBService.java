@@ -1,8 +1,6 @@
 package services.dbService;
 
 
-import javafx.beans.property.ReadOnlyListWrapper;
-import javafx.scene.effect.Effect;
 import services.PropertyService;
 import services.dbService.dao.DealDAO;
 import services.dbService.dao.InstrumentDAO;
