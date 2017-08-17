@@ -2,6 +2,7 @@ package servlets;
 
 import helpers.CaseUtils;
 import helpers.JSONResponse;
+import helpers.SimpleCache;
 import services.dbService.DBException;
 import services.dbService.DBService;
 
@@ -12,11 +13,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+
+
 @WebServlet("/api/get/averagebuysell")
 public class GetAverageBuySell extends HttpServlet {
+
+    static String SERVLET_KEY = "/api/get/averagebuysell";
+
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response)
             throws IOException, ServletException {
+
+        if (SimpleCache.containsKey(SERVLET_KEY) && CaseUtils.checkAuth(request)) {
+            JSONResponse.toJson(response, SimpleCache.getCacheData(SERVLET_KEY));
+            return;
+        }
+
 
         DBService dbService = new DBService();
 
@@ -34,7 +46,9 @@ public class GetAverageBuySell extends HttpServlet {
                 return;
             }
 
-            JSONResponse.toJson(response, dbService.getAverageBuySell());
+            Object data = dbService.getAverageBuySell();
+            SimpleCache.setCacheData(SERVLET_KEY, data);
+            JSONResponse.toJson(response, data);
 
         } catch (DBException e) {
             JSONResponse.dbConnFailed(response);

@@ -2,6 +2,7 @@ package servlets;
 
 import helpers.CaseUtils;
 import helpers.JSONResponse;
+import helpers.SimpleCache;
 import services.dbService.DBException;
 import services.dbService.DBService;
 
@@ -17,6 +18,11 @@ public class GetEndingPosition extends HttpServlet {
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response)
             throws IOException, ServletException {
+
+        if (SimpleCache.containsKey("/api/get/endingposition") && CaseUtils.checkAuth(request)) {
+            JSONResponse.toJson(response, SimpleCache.getCacheData("/api/get/endingposition"));
+            return;
+        }
 
         DBService dbService = new DBService();
 
@@ -34,7 +40,9 @@ public class GetEndingPosition extends HttpServlet {
                 return;
             }
 
-            JSONResponse.toJson(response, dbService.getEndingPosition());
+            Object data = dbService.getEndingPosition();
+            SimpleCache.setCacheData("/api/get/endingposition", data);
+            JSONResponse.toJson(response, data);
 
         } catch (DBException e) {
             JSONResponse.dbConnFailed(response);

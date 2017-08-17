@@ -154,7 +154,7 @@ public class RequirementDAO {
     public List<RealizedProfitLoss> getRealizedProfitLoss() throws SQLException {
 	    List<RealizedProfitLoss> epList = new LinkedList<>();
 
-	    String s = "  select  t.counterparty_name,t.instrument_name,((buy_amount/total_buy_quantity)-(sell_amount/total_sell_quantity)) * total_sell_quantity as difference from (\n" +
+	    String s = "  select  t.counterparty_name,t.instrument_name,((sell_amount/total_sell_quantity)- (buy_amount/total_buy_quantity)) * total_sell_quantity as difference from (\n" +
                 "\n" +
                 "      select counterparty.counterparty_name,instrument.instrument_name,deal_counterparty_id,deal_instrument_id,\n" +
                 "\t\t\t\t\t\t\tSum(case when deal_type='B' then deal_quantity end) as total_buy_quantity,\n" +
@@ -193,7 +193,7 @@ public class RequirementDAO {
     public List<EffectiveProfitLoss> getEffectiveProfitLoss() throws SQLException {
 
 	    List<EffectiveProfitLoss> epList = new LinkedList<>();
-        String s = "select counterparty_name,instrument_name,deal_counterparty_id,deal_instrument_id, ((buy_amount/total_buy_quantity)-(sell_amount/total_sell_quantity)) * total_sell_quantity as realized_profit, \n" +
+        String s = "select counterparty_name,instrument_name,deal_counterparty_id,deal_instrument_id, ((sell_amount/total_sell_quantity)-(buy_amount/total_buy_quantity)) * total_sell_quantity as realized_profit, \n" +
                 "ABS(total_buy_quantity-total_sell_quantity) as difference_quantity\n" +
                 "         from (\n" +
                 "\n" +
